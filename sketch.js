@@ -34,11 +34,11 @@
  function preload() { // preload our yoyo video
    vid = createVideo("tree.mp4"); 
    vid.pause();
-   //you = random(0,100); 
-   //console.log(you);
-   //you = int(you);
-   //console.log(you);
-   //you = you.toString();
+   you = random(0,100); 
+   console.log(you);
+   you = int(you);
+   console.log(you);
+   you = you.toString();
 
    vid.position(windowWidth/4,windowHeight/4);
    vid.size(windowWidth/2,windowHeight/2); 
@@ -98,6 +98,17 @@
   }
  
  }
+
+function playVideo () {
+  if (!playing) {
+   vid.play();
+  }
+ else {
+  vid.pause();
+  
+  playing = !playing;
+ }
+}
  
  function sendTheMessage() {
    dataServer.publish({
@@ -172,11 +183,11 @@
  
  }
 
- function uuid() {
-  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-    var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
-    return v.toString(16);
-  });
-}
+ //function uuid() {
+  //return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    //var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+    //return v.toString(16);
+  //});
+//}
 
-var userID=uuid();
+//var userID=uuid();
