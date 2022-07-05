@@ -15,6 +15,8 @@
  // used to collect the viewers of the movie
  //let viewers = [];
  
+let startVideo = false; 
+
  let occupancy = 0;
  
  let who;  // help us track who is here
@@ -78,9 +80,10 @@
      text("Wait for someone to sow the seed together", windowWidth/2, windowHeight/5 * 4);
  
      allowMessage = false;
- 
+   if (startVideo == true) {
+      starVideo = false;
+   }
   } else {
- 
      drawVideo();
      sendTheMessage();
      allowMessage = true;
@@ -150,6 +153,12 @@
    vid.size(windowWidth/2, windowHeight/2); 
    vid.position(windowWidth/4,windowHeight/4);
   
+  if (startVideo == false) {
+  
+   vid.play();
+   startVideo = true;
+   
+  } 
    //vid.play();
    //if (vid.pause) {
      //vid.loop();
@@ -159,15 +168,7 @@
    // allowMessage = false;
 
    //}
-  
-  if (!playing) {
-   vid.play();
-  }
- else {
-  vid.pause();
-  
-  playing = !playing;
- }
+
    //vid.loop();
  
  }
