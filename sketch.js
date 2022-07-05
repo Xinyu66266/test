@@ -90,7 +90,7 @@
   }
  
   if (occupancy > 0) {
-     text("There are " +  occupancy + " people online", windowWidth/2, windowHeight/8 * 7);
+     text("There are " +  occupancy + " elements affecting plant growth", windowWidth/2, windowHeight/8 * 7);
  
   } else {
      //text("There is no one online", windowWidth/2, windowHeight/8 * 7);
@@ -98,17 +98,6 @@
   }
  
  }
- 
- //function mousePressed() {
- 
-   //if (firstClick == false) { 
-     //drawVideo();
-     //firstClick = true;
-     //sendTheMessage();
-     // first click draws the video
-  //}
- 
- //}
  
  function sendTheMessage() {
    dataServer.publish({
@@ -190,4 +179,4 @@
   });
 }
 
-var userID=uuid();//something like: "ec0c22fa-f909-48da-92cb-db17ecdb91c5" 
+var userID=uuid();
