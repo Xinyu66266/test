@@ -21,7 +21,7 @@
  let presence; // help up track who is watching
  
  let vid; // variable for video
- //let playing = false; // make sure the video is not playing right away
+ let playing = false; // make sure the video is not playing right away
  
  //let firstClick = false; // the first click sends the message to PubNub
  
@@ -98,17 +98,6 @@
   }
  
  }
-
-function playVideo () {
-  if (!playing) {
-   vid.play();
-  }
- else {
-  vid.pause();
-  
-  playing = !playing;
- }
-}
  
  function sendTheMessage() {
    dataServer.publish({
@@ -160,15 +149,25 @@ function playVideo () {
    background(244, 229, 218);
    vid.size(windowWidth/2, windowHeight/2); 
    vid.position(windowWidth/4,windowHeight/4);
+  
+   //vid.play();
+   //if (vid.pause) {
+     //vid.loop();
+    // allowMessage = true;
+
+   //} else {
+   // allowMessage = false;
+
+   //}
+  
+  if (!playing) {
    vid.play();
-   if (vid.pause) {
-     vid.loop();
-     allowMessage = true;
-
-   } else {
-    allowMessage = false;
-
-   }
+  }
+ else {
+  vid.pause();
+  
+  playing = !playing;
+ }
    //vid.loop();
  
  }
