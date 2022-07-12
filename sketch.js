@@ -15,15 +15,13 @@
  // used to collect the viewers of the movie
  //let viewers = [];
  
-let startVideo = false; 
-
  let occupancy = 0;
  
  let who;  // help us track who is here
  let presence; // help up track who is watching
  
  let vid; // variable for video
- let playing = false; // make sure the video is not playing right away
+ //let playing = false; // make sure the video is not playing right away
  
  //let firstClick = false; // the first click sends the message to PubNub
  
@@ -80,10 +78,9 @@ let startVideo = false;
      text("Wait for someone to sow the seed together", windowWidth/2, windowHeight/5 * 4);
  
      allowMessage = false;
-   if (startVideo == true) {
-      starVideo = false;
-   }
+ 
   } else {
+ 
      drawVideo();
      sendTheMessage();
      allowMessage = true;
@@ -153,12 +150,6 @@ let startVideo = false;
    vid.size(windowWidth/2, windowHeight/2); 
    vid.position(windowWidth/4,windowHeight/4);
   
-  if (startVideo == false) {
-  
-   vid.play();
-   startVideo = true;
-   
-  } 
    //vid.play();
    //if (vid.pause) {
      //vid.loop();
@@ -168,7 +159,15 @@ let startVideo = false;
    // allowMessage = false;
 
    //}
-
+  
+  if (!playing) {
+   vid.play();
+  }
+ else {
+  vid.pause();
+  
+  playing = !playing;
+ }
    //vid.loop();
  
  }
